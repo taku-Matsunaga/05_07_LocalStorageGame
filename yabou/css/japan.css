@@ -88,3 +88,38 @@ img {
   color: dimgray;
   font-weight: bold;
 }
+
+.callHelp {
+  position: absolute;
+  top: 10%;
+  background-color: white;
+  height: 5vh;
+  width: 30vw;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+}
+
+.callHelp:hover {
+  cursor: pointer;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.callHelp a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: dimgray;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -50,6 +50,7 @@ function checkPrefecture() {
   localStorage.setItem('checkPlace', checkPlaceData);
 }
 
+// localstorageの確認
 
 if (localStorage.getItem('startCheck')) {
   let startGetData = localStorage.getItem('startCheck');
@@ -63,12 +64,36 @@ if (localStorage.getItem('checkPlace')) {
 let refWin = ref.match(/win/);
 let refLose = ref.match(/lose/);
 let refDraw = ref.match(/draw/);
+let refCall = ref.match(/call/);
 
 console.log(ref);
 console.log(refWin);
 console.log(refLose);
 console.log(refDraw);
+console.log(refCall);
 console.log(startJudge);
+
+
+// 呂布選択後 1回目
+if (refCall) {
+
+  console.log(refCall);
+
+  if (refCall[0] == "call") {
+    console.log('display');
+    document.getElementById('osaka').style.backgroundColor = 'blue';
+    document.getElementById('kyoto').style.backgroundColor = 'blue';
+    document.getElementById('nagashino').style.backgroundColor = 'blue';
+    document.getElementById('odawara').style.backgroundColor = 'blue';
+    document.getElementById('edo').style.backgroundColor = 'blue';
+    localStorage.clear();
+    window.onload = function () {
+      setTimeout(location.href = "/yabou/complete.html", 5000);
+    };
+  };
+};
+
+
 
 // let placeData = [
 //   { name: 'kyushu', securePlace : 1, resultData: 1, checkPlace: 0},
@@ -141,6 +166,7 @@ if (startJudge > 0) {
   // if(placeData[3].securePlace == 0){
   //   jumpToEdo();
   // };
+
 
   if (refWin) {
 
@@ -256,7 +282,7 @@ if (startJudge > 0) {
     };
   };
 
-  if (checkPlace[0].prefecture == 1 && checkPlace[1].prefecture == 1 && checkPlace[2].prefecture == 1 && checkPlace[3].prefecture == 1) {
+  if (checkPlace[0].prefecture == 1 && checkPlace[1].prefecture == 1 && checkPlace[2].prefecture == 1 && checkPlace[3].prefecture == 1 && checkPlace[4].prefecture == 1 && checkPlace[5].prefecture == 1) {
     window.onload = function () {
       localStorage.clear();
       setTimeout(location.href = "/yabou/complete.html", 5000);
@@ -402,6 +428,27 @@ if (startJudge == 0) {
 
   // let jsonGetData = localStorage.getItem('bigData');
   // placeData = JSON.parse(jsonGetData);
+
+  // 呂布選択後
+  // if (refCall) {
+
+  //   console.log(refCall);
+
+  //   if (refCall[0] == "call") {
+  //     console.log('display');
+  //     document.getElementById('osaka').style.backgroundColor = 'blue';
+  //     document.getElementById('kyoto').style.backgroundColor = 'blue';
+  //     document.getElementById('nagashino').style.backgroundColor = 'blue';
+  //     document.getElementById('odawara').style.backgroundColor = 'blue';
+  //     document.getElementById('edo').style.backgroundColor = 'blue';
+  //     localStorage.clear();
+  //     window.onload = function () {
+  //       setTimeout(location.href = "/yabou/complete.html", 5000);
+  //     };
+  //   };
+  // };
+
+
   startJudge = 1;
   console.log('counting == 0');
 
@@ -517,7 +564,10 @@ if (startJudge == 0) {
 
   console.log(ref);
   console.log(jsonData);
+
+
 }
+
 
 // 領地の色分け
 
@@ -557,10 +607,29 @@ if (placeData[5].securePlace == 1) {
   document.getElementById('nagashino').style.backgroundColor = 'red';
 }
 
-document.getElementById('save').onclick = function(){
+document.getElementById('save').onclick = function () {
   let jsonData = JSON.stringify(placeData);
   localStorage.setItem('bigData', jsonData);
   let startData = JSON.stringify(startJudge);
   localStorage.setItem('startCheck', startData);
   checkPrefecture();
 }
+
+// 呂布選択後 2回目以降
+if (refCall) {
+
+  console.log(refCall);
+
+  if (refCall[0] == "call") {
+    console.log('display');
+    document.getElementById('osaka').style.backgroundColor = 'blue';
+    document.getElementById('kyoto').style.backgroundColor = 'blue';
+    document.getElementById('nagashino').style.backgroundColor = 'blue';
+    document.getElementById('odawara').style.backgroundColor = 'blue';
+    document.getElementById('edo').style.backgroundColor = 'blue';
+    localStorage.clear();
+    window.onload = function () {
+      setTimeout(location.href = "/yabou/complete.html", 5000);
+    };
+  };
+};
