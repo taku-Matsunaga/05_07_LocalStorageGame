@@ -1,5 +1,4 @@
 'use strict';
-// import {fadeIn, fadeOut} from './fade.js';
 
 let timeCount = 0;
 
@@ -18,7 +17,7 @@ setTimeout(addImg, 7000);
 
 let addTitle = function(){
   document.getElementById('matsunagaTitle').classList.add('titleMatsunaga');
-  document.getElementById('matsunagaTitle').insertAdjacentHTML('afterbegin', "<div class='titleYabou'>松永の野望</div><div class='titleBtnStart' id='start'><a href='/yabou/japan.html'>始める</a></div>");
+  document.getElementById('matsunagaTitle').insertAdjacentHTML('afterbegin', "<div class='titleYabou'>松永の野望</div><div class='titleVer'><p>パワーアップVer</p></div><div class='titleBtnStart' id='start'><a href='/yabou/japan.html'>始める</a></div>");
 
   if (localStorage.getItem('startCheck')) {
     let startGetData = localStorage.getItem('startCheck');
@@ -36,9 +35,3 @@ let addTitle = function(){
 
 setTimeout(addTitle, 7000)
 
-
-// $(function(){
-//   setTimeout(function(){
-//   $('.backSection').add(document.getElementById('blurPoint')).addClass('blur');
-//   },3000)
-// });

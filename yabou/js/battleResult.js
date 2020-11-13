@@ -65,12 +65,14 @@ let refWin = ref.match(/win/);
 let refLose = ref.match(/lose/);
 let refDraw = ref.match(/draw/);
 let refCall = ref.match(/call/);
+let refEnemy = ref.match(/enemy/);
 
 console.log(ref);
 console.log(refWin);
 console.log(refLose);
 console.log(refDraw);
 console.log(refCall);
+console.log(refEnemy);
 console.log(startJudge);
 
 
@@ -201,6 +203,52 @@ if (startJudge > 0) {
       checkPrefecture();
     };
   };
+
+  // if (refEnemy) {
+
+  //   if (checkPlace[0].prefecture > 0 && refEnemy[0] == "enemy" && checkPlace[0].before == 1) {
+  //     document.getElementById('kyushu').style.backgroundColor = 'red';
+  //     checkPlace[0].before = 0;
+  //     checkPlace[0].prefecture = 0;
+  //     checkPrefecture();
+  //   };
+  //   if (checkPlace[1].prefecture > 0 && refEnemy[0] == "enemy" && checkPlace[1].before == 1) {
+  //     document.getElementById('osaka').style.backgroundColor = 'red';
+  //     document.getElementById('kyushu').style.backgroundColor = 'red';
+  //     checkPlace[1].before = 0;
+  //     checkPlace[1].prefecture = 0;
+  //     checkPrefecture();
+  //     localStorage.clear();
+  //     window.onload = function () {
+  //       setTimeout(location.href = "/yabou/end.html", 5000);
+  //     };
+  //   };
+  //   if (checkPlace[2].prefecture > 0 && refEnemy[0] == "enemy" && checkPlace[2].before == 1) {
+  //     document.getElementById('odawara').style.backgroundColor = 'red';
+  //     checkPlace[2].before = 0;
+  //     checkPlace[2].prefecture = 0;
+  //     checkPrefecture();
+  //   };
+  //   if (checkPlace[3].prefecture > 0 && refEnemy[0] == "enemy" && checkPlace[3].before == 1) {
+  //     document.getElementById('edo').style.backgroundColor = 'red';
+  //     checkPlace[3].before = 0;
+  //     checkPlace[3].prefecture = 0;
+  //     checkPrefecture();
+  //   };
+  //   if (checkPlace[4].prefecture > 0 && refEnemy[0] == "enemy" && checkPlace[4].before == 1) {
+  //     document.getElementById('kyoto').style.backgroundColor = 'red';
+  //     checkPlace[4].before = 0;
+  //     checkPlace[4].prefecture = 0;
+  //     checkPrefecture();
+  //   };
+  //   if (checkPlace[5].prefecture > 0 && refEnemy[0] == "enemy" && checkPlace[5].before == 1) {
+  //     document.getElementById('nagashino').style.backgroundColor = 'red';
+  //     checkPlace[5].before = 0;
+  //     checkPlace[5].prefecture = 0;
+  //     checkPrefecture();
+  //   };
+  // };
+
 
   if (refLose) {
 
